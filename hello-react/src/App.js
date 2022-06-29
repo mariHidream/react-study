@@ -1,10 +1,10 @@
 import React from 'react';
-import EventPractice from "./EventPractice";
+import Assignment from "./Assignment";
 
 
 function App() {
 	return (
-		<EventPractice />
+		<Assignment />
 	);
 }
 
