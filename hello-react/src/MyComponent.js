@@ -1,23 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react'; // 1. useState 선언 꼭 확인하기.
 
-const MyComponent = ({name,favoriteNumber, children}) => {
-    return (
-        <div>
-            테스트 이름 : {name}, {children}
-            <br/>
-            넘버 넘버 : {favoriteNumber}
-        </div>
-    );
+ 
+const MyComponent = ({ name, children }) => {
+
+  const [message, setMessage] = useState(''); 
+  const [color, setColor] = useState('coral')
+
+  const onClickEnter = () => setMessage('안녕하세요!');
+
+  return (
+		<>
+			<div onClick={onClickEnter}></div>
+            <div style={{backgroundColor : color}} onClick={() => setColor('coral')}>
+            안녕하세요, 제 이름은 {name}입니다. <br />
+            children 값은 {children}
+            입니다.
+            </div>
+		</>
+  );
 };
-
-MyComponent.defaultProps = {
-    name : '기본 이름'
-}
-
-MyComponent.protoTypes = {
-    name : PropTypes.string,
-    favoriteNumber: PropTypes.number.isRequired
-}
+ 
 
 export default MyComponent;
