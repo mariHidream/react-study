@@ -14,22 +14,21 @@
 
 * 6/22 1주차 스터디
   * 스터디 범위 1~3장
-  * https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter1.md
-    * [1장 리액트의 시작](/chapter01.md)
-    * 2장 JSX
-    * 3장 컴포넌트
+    * [1장 리액트의 시작](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter1.md)
+    * [2장 JSX](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter2.md) 
+    * [3장 컴포넌트](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter3.md)
   
 * 6/29 2주차 스터디
   * 스터디 범위 4~6장
-    * 4장 이벤트 핸들링
-    * 5장 Ref : DOM에 이름달기
-    * 6장 컴포넌트 반복
+    * [4장 이벤트 핸들링](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter4.md)
+    * [5장 Ref : DOM에 이름달기] (https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter5.md)
+    * [6장 컴포넌트 반복](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter6.md)
     * 숙제
     
 * 7/6 3주차 스터디
   * 스터디 범위 7~9장 + 16장
-    * 7장 컴포넌트의 라이프사이클 메서드
-    * 8장 Hooks
-    * 9장 컴포넌트 스타일링
+    * [7장 컴포넌트의 라이프사이클 메서드](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter7.md)
+    * [8장 Hooks](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter8.md)
+    * [9장 컴포넌트 스타일링](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter9.md)
     * (심화) 16장 리더스 라이브러리 이해하기
     * 숙제(심화)
