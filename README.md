@@ -15,7 +15,7 @@
 * 6/22 1주차 스터디
   * 스터디 범위 1~3장
     * [1장 리액트의 시작](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter1.md)
-    * [2장 JSX](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter2.md) 
+    * [2장 JSX](https://github.com/mariHidream/react-study/blob/6a553277c10934eda26c6acc1cbfca242b09eb7c/chapter2.md) 
     * [3장 컴포넌트](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter3.md)
   
 * 6/29 2주차 스터디
