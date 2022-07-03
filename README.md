@@ -21,7 +21,7 @@
 * 6/29 2주차 스터디
   * 스터디 범위 4~6장
     * [4장 이벤트 핸들링](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter4.md)
-    * [5장 Ref : DOM에 이름달기] (https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter5.md)
+    * [5장 Ref : DOM에 이름달기](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter5.md)
     * [6장 컴포넌트 반복](https://github.com/mariHidream/react-study/blob/41094ad307ffa483dea64b08896677f1bfec298d/chapter6.md)
     * 숙제
     
