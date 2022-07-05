@@ -19,19 +19,19 @@
 - 6/22 1주차 스터디
   - 스터디 범위 1~3장
     - [1장 리액트의 시작](./bookIndex/chapter01.md)
-    - [2장 JSX](./bookIndex/chapter2.md)
-    - [3장 컴포넌트](./bookIndex/chapter3.md)
+    - [2장 JSX](./bookIndex/chapter02.md)
+    - [3장 컴포넌트](./bookIndex/chapter03.md)
 - 6/29 2주차 스터디
   - 스터디 범위 4~6장
-    - [4장 이벤트 핸들링](./bookIndex/chapter4.md)
-    - [5장 Ref : DOM에 이름달기](./bookIndex/chapter5.md)
-    - [6장 컴포넌트 반복](./bookIndex/chapter6.md)
+    - [4장 이벤트 핸들링](./bookIndex/chapter04.md)
+    - [5장 Ref : DOM에 이름달기](./bookIndex/chapter05.md)
+    - [6장 컴포넌트 반복](./bookIndex/chapter06.md)
     - 숙제
 - 7/6 3주차 스터디
   - 스터디 범위 7~9장 + 16장
-    - [7장 컴포넌트의 라이프사이클 메서드](./bookIndex/chapter7.md)
-    - [8장 Hooks](./bookIndex/chapter8.md)
-    - [9장 컴포넌트 스타일링](./bookIndex/chapter9.md)
+    - [7장 컴포넌트의 라이프사이클 메서드](./bookIndex/chapter07.md)
+    - [8장 Hooks](./bookIndex/chapter08.md)
+    - [9장 컴포넌트 스타일링](./bookIndex/chapter09.md)
     - (심화) 16장 리더스 라이브러리 이해하기
     - 숙제(심화)
 - 7/13 4주차 스터디
