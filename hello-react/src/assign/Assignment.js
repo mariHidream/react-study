@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
+import AddItem from './AddItem';
 import Assignmentitem from "./Assignmentitem";
+import './style.css'
 
 const data = [
     {id:1, title : 'item 0'},
@@ -10,8 +12,6 @@ const data = [
     {id:6, title : 'item 2'},
     {id:7, title : 'item 6'},
     {id:8, title : 'item 7'},
-    {id:9, title : 'item 8'},
-    {id:10, title : 'item 9'}
 ]
 /*  
     1. 클릭이벤트 (클릭하면 색 변화게)
@@ -20,8 +20,23 @@ const data = [
 */
 
 const Assignment = ()=>{
+    const idNum = useRef(data.length + 1);
+    const [list, setList] = useState(data);
+
+    const onDel = (id)=>{
+        setList(list.filter(item => item.id !== id))
+    }
+    const onAdd = (put)=>{
+        put.id = idNum.current++;
+        setList([ ...list, put])
+    }
+    
+
     return (
-        <Assignmentitem data={data}/>
+        <div className='con'>
+            <AddItem onAdd={onAdd} />
+            <Assignmentitem list={list} onDel={onDel} />
+        </div>
     );
 }
 

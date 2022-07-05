@@ -1,25 +1,13 @@
 import React from 'react'
+import ListItem from './ListItem'
 
+const Assignmentitem = ({list, onDel})=>{
 
-const Assignmentitem = ({data})=>{
-
-    const style = {
-        backgroundColor:'#999',
-        listStyle : 'none',
-        marginBottom: '5px',
-        padding: '10px',
-        fontWeight:500
-    }
-    
     return (
         <>
-            <ul style={{
-                backgroundColor : '#eee',
-                width:'300px',
-                padding: '10px'
-            }}>
+            <ul>
                 {
-                    data.map(item => <li style={style} key={item.id}>{item.title}</li>)
+                    list.map(item => <ListItem ey={item.id} item={item} onDel={onDel} />)
                 }
             </ul>
         </>
