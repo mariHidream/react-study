@@ -74,5 +74,8 @@
             >> Reducer(리듀서)가 주문을 보고 Store(스토어)의 상태를 업데이트하는 것이다.  
             >> Action(액션)을 Reducer(리듀서)에 전달하기 위해서는 dispatch() 메소드를 사용해야한다.  
             >>> API 호출을 리듀서 안에 넣지 마세요.  
-
+        ``` javascript
+            type Reducer<S, A> = (state: S, action: A) => S   
+        ```
+        
     
