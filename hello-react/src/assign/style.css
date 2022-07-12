@@ -1,12 +1,15 @@
 
 
-.con{margin: 20px}
+.con{ margin: 20px; }
+.con .list-wrap{width: 650px; display: flex; flex-wrap: wrap;justify-content: space-between;}
+.input{}
 
 input[type="text"]{width: 230px;}
 input[type="text"] + button{margin-left: 10px; width: 70px;}
 
 ul{ background-color : #999; width:300px; padding: 10px }
-li{overflow: hidden; background-color: #eee; list-style: none; margin-bottom: 5px; padding:10px; font-weight: 500;}
+ul+ul{}
+li{overflow: hidden;width: 100%; background-color: #eee; list-style: none; margin-bottom: 5px; padding:10px; font-weight: 500;}
 li:hover{background-color: #fff;}
 li span{float: left;}
 li button{float: right;  width:50px;}

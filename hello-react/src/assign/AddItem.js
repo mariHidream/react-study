@@ -27,7 +27,7 @@ const AddItem = ({onAdd}) => {
     } 
 
     return (
-        <div >
+        <div className="input">
             <input type="text" name="title" value={title} onChange={changeInput} ref={titleRef}></input>
             <button onClick={onSubmit}>추가</button>
         </div>
