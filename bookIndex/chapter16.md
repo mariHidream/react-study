@@ -29,9 +29,9 @@
             * 주로 네트워크 요청과 같은 비동기 작업은 미들웨어를 통해 관리 *   
     - Store - Action - Reducer  
         - Store(스토어)  
-            > 저장소는 애플리케이션의 상태 트리를 가지고 있는 객체
-            >> 컴포넌트에서 상태 정보가 필요할 때 스토어에 접근
-            >> Redux 앱에는 단 하나의 저장소만 있어야 한다.
+            > 저장소는 애플리케이션의 상태 트리를 가지고 있는 객체  
+            >> 컴포넌트에서 상태 정보가 필요할 때 스토어에 접근  
+            >> Redux 앱에는 단 하나의 저장소만 있어야 한다.  
         ``` javascript
             type Store = {
                 dispatch: Dispatch,
@@ -40,10 +40,10 @@
                 replaceReducer: (reducer: Reducer) => void
             }
         ```
-        **_dispatch(action)_** 기본 디스패치 함수
-        **_getState()_** 저장소의 현재 상태를 반환
-        **_subscribe(listener)_** 상태가 바뀔 때 호출될 함수를 등록
-        **_replaceReducer(nextReducer)_** 핫 리로딩과 코드 분할을 구현할때 사용(사용하지 않음.)
+        **_dispatch(action)_** 기본 디스패치 함수  
+        **_getState()_** 저장소의 현재 상태를 반환  
+        **_subscribe(listener)_** 상태가 바뀔 때 호출될 함수를 등록  
+        **_replaceReducer(nextReducer)_** 핫 리로딩과 코드 분할을 구현할때 사용(사용하지 않음.)  
         ``` javascript
             import { createStore } from 'redux'
             let store = createStore(todos, ['Use Redux'])
@@ -59,20 +59,20 @@
             store.dispatch(addTodo('Read about the middleware'))
         ```
         - Action(액션)  
-            > 액션은 상태를 변화시키려는 의도를 표현하는 평범한 객체
-            >> 앱에서 스토어에 운반할 데이터를 말한다. 
-            >> 자바스크립트 객체 형식으로 되어있다.
-            액션은 저장소에 데이터를 넣는 유일한 방법.
-            UI 이벤트에서 왔든, 네트워크 콜백에서 왔든, 웹소켓과 같은 다른 소스에서 왔든 모든 데이터는 액션으로써 보내진다.
+            > 액션은 상태를 변화시키려는 의도를 표현하는 평범한 객체  
+            >> 앱에서 스토어에 운반할 데이터를 말한다.   
+            >> 자바스크립트 객체 형식으로 되어있다.  
+            액션은 저장소에 데이터를 넣는 유일한 방법.  
+            UI 이벤트에서 왔든, 네트워크 콜백에서 왔든, 웹소켓과 같은 다른 소스에서 왔든 모든 데이터는 액션으로써 보내진다.  
         ``` javascript
             type Action = Object
         ```
-        - Reducer(리듀서)
-            > 리듀서(리듀싱 함수)는 누적값과 값을 받아서 새로운 누적값을 반환하는 함수
-            >> Action(액션)을 Store(스토어)에 바로 전달하는 것이 아니다.
-            >> Action(액션)을 Reducer(리듀서)에 전달해야한다.
-            >> Reducer(리듀서)가 주문을 보고 Store(스토어)의 상태를 업데이트하는 것이다.
-            >> Action(액션)을 Reducer(리듀서)에 전달하기 위해서는 dispatch() 메소드를 사용해야한다.
-            >>> API 호출을 리듀서 안에 넣지 마세요.
+        - Reducer(리듀서)  
+            > 리듀서(리듀싱 함수)는 누적값과 값을 받아서 새로운 누적값을 반환하는 함수  
+            >> Action(액션)을 Store(스토어)에 바로 전달하는 것이 아니다.  
+            >> Action(액션)을 Reducer(리듀서)에 전달해야한다.  
+            >> Reducer(리듀서)가 주문을 보고 Store(스토어)의 상태를 업데이트하는 것이다.  
+            >> Action(액션)을 Reducer(리듀서)에 전달하기 위해서는 dispatch() 메소드를 사용해야한다.  
+            >>> API 호출을 리듀서 안에 넣지 마세요.  
 
     
