@@ -11,9 +11,7 @@ export const changeInput = input => (
 )
 
 let id = 3; //inser가 호출될 때마다 1씩 더해주기
-export const insert = text => (
-        
-    {
+export const insert = text => ({
     type : INSERT,
     todo : {
         id : id++,
