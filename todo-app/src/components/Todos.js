@@ -19,7 +19,7 @@ const TodoItem = ({todo, todoIndex, RemoveTodos}) => {
     return (
         <div className='todoBoard'>
             <div className={`${todoIndex}`}>
-                <h2>list</h2>
+                <h2><input type="text" value={todo.name}/></h2>
                 {
                     todo.items.map(item => (
                         <Item key={item.id} item={item}></Item>

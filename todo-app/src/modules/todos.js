@@ -28,6 +28,7 @@ function todos(state = initialState, action) {
                 ...state,
                 todos : state.todos.concat([{
                     todoIndex : `todo_${state.todoidx++}`,
+                    name : 'To-do',
                     items : [{
                         id : state.itemidx,
                         text : 'text',
