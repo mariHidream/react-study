@@ -1,50 +1,61 @@
 import React from 'react';
+import '../style/style.css'
 
-const TodoItem = ({todo, onToggle, onRemove }) => {
+const Item = ({item}) => {
     return (
-        <div>
+        <div className='todo'>
             <input type="checkbox"
-                onClick={()=>onToggle(todo.id)}
-                checked={todo.done}
+                checked={item.done}
                 readOnly={true}
             />
-            <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
-                {todo.text}
-            </span>
-            <button onClick={() => onRemove(todo.id)} >삭제</button>
+            <span>{item.text}</span>
+            <button type="button">삭제</button>
+        </div>
+    )
+}
+
+
+const TodoItem = ({todo, todoIndex, RemoveTodos}) => {
+    return (
+        <div className='todoBoard'>
+            <div className={`${todoIndex}`}>
+                <h2>list</h2>
+                {
+                    todo.items.map(item => (
+                        <Item key={item.id} item={item}></Item>
+                    ))
+                }
+           </div>
+           <div className='buttons'>
+                <button type="button" className='todoAdd' onClick={()=> RemoveTodos(todoIndex)}>리스트추가</button>
+                <button type="button" className='remove' onClick={()=> RemoveTodos(todoIndex)}>섹션삭제</button>
+           </div>
         </div>
     );
 };
 
 const Todos = ({
-    input, // 인풋에 입력되는 텍스트
     todos, // 할 일 목록이 들어 있는 객체
-    onChangeInput,
-    onInsert,
-    onToggle,
-    onRemove,
+    AddTodos,
+    RemoveTodos
 }) => {
-    const onSubmit = e =>{
-        e.preventDefault();
-        onInsert(input);
-        onChangeInput(''); // 등록 후 인풋 초기화
-    };
-    const onChange = e => onChangeInput(e.target.value);
     return(
         <div>
-            <form onSubmit={onSubmit}>
-                <input value={input} onChange={onChange}/>
-                <button type="submit" > 등록 </button>
-            </form>
             <div>
-                {todos.map(todo => (
-                    <TodoItem
-                        todo={todo}
-                        key={todo.id}
-                        onToggle={onToggle}
-                        onRemove={onRemove}
-                    />
-                ))}
+                <button type="button" className='add' onClick={AddTodos}>섹션추가</button>
+                <hr/>
+                <div className="listBody">
+                    {
+                        todos.map(todo => (
+                            <TodoItem
+                                todo={todo}
+                                key={todo.todoIndex}
+                                todoIndex={todo.todoIndex}
+                                RemoveTodos={RemoveTodos}
+                            />
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )
