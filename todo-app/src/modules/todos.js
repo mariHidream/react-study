@@ -3,6 +3,7 @@ const INSERT = 'todos/INSERT'; // 새로운 item 등록
 const REMOVE = 'todos/REMOVE'; // item 제거
 const ADDTODOS = "todos/ADDTODOS"; // 섹션 todo 추가
 const REMOVETODOS = "todos/REMOVETODOS"; //섹션 todo 삭제
+const MOVEITEMS = "todos/MOVEITEMS"; //섹션 todo 삭제
 
 const initialState = {
     todoidx : 0,
@@ -91,6 +92,8 @@ function todos(state = initialState, action) {
                     }
                 })
             }
+        case MOVEITEMS:
+            console.log(action.type)
         default:
             return state;
     }

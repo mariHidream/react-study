@@ -37,7 +37,6 @@ const TodoItem = ({todo, RemoveTodos, Insert, Remove}) => {
     }
 
     const removeItem = (item)=>{
-        
         Remove(todo,item)
     }
 
@@ -85,7 +84,7 @@ const TodoItem = ({todo, RemoveTodos, Insert, Remove}) => {
 };
 
 const Todos = ({
-    todos, // 할 일 목록이 들어 있는 객체
+    todos,
     AddTodos,
     RemoveTodos,
     Insert,
