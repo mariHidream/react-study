@@ -1,19 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/style.css'
 
-const Item = ({item}) => {
+const Item = ({item, removeItem}) => {
     return (
         <div className='todo'>
             <input type="checkbox" checked={item.done} readOnly/>
             <span>{item.text}</span>
-            <button type="button">삭제</button>
+            <button type="button" onClick={()=>removeItem(item)}>삭제</button>
         </div>
     )
 }
 
-const TodoItem = ({todo, todoIndex, RemoveTodos, Insert}) => {
+const TodoItem = ({todo, RemoveTodos, Insert, Remove}) => {
 
-    const [name, setName] = useState(todo.name);
+    var {name, todoIndex} = todo;
+
+    const [todoName, setTodoName] = useState(name);
     const [inputState, setInputState] = useState(false);
     const [itemText, setItemText] = useState('');
     const [text, setText] = useState('');
@@ -31,7 +33,12 @@ const TodoItem = ({todo, todoIndex, RemoveTodos, Insert}) => {
     
     const changeName = (e) => {
         const {value} = e.target
-        setName(value)
+        setTodoName(value)
+    }
+
+    const removeItem = (item)=>{
+        
+        Remove(todo,item)
     }
 
     useEffect(()=>{
@@ -52,10 +59,10 @@ const TodoItem = ({todo, todoIndex, RemoveTodos, Insert}) => {
     return (
         <div className='todoBoard'>
             <div className={`${todoIndex}`}>
-                <h2><input type="text" value={name} onChange={changeName}/></h2>
+                <h2><input type="text" value={todoName} onChange={changeName}/></h2>
                 {
                    todo.items && todo.items.map(item => (
-                        <Item key={item.id} item={item}></Item>
+                        <Item key={item.id} item={item} removeItem={removeItem}></Item>
                     ))
                 }
            </div>
@@ -81,7 +88,8 @@ const Todos = ({
     todos, // 할 일 목록이 들어 있는 객체
     AddTodos,
     RemoveTodos,
-    Insert
+    Insert,
+    Remove
 }) => {
     return(
         <div>
@@ -94,9 +102,9 @@ const Todos = ({
                             <TodoItem
                                 todo={todo}
                                 key={todo.todoIndex}
-                                todoIndex={todo.todoIndex}
                                 RemoveTodos={RemoveTodos}
                                 Insert={Insert}
+                                Remove={Remove}
                             />
                         ))
                     }

@@ -1,6 +1,5 @@
 const CHANGE_INPUT = 'todos/CHANGE_INPUT'; // 인풋 값을 변경함
 const INSERT = 'todos/INSERT'; // 새로운 item 등록
-const TOGGLE = 'todos/TOGGLE'; // 체크/체크 해제
 const REMOVE = 'todos/REMOVE'; // item 제거
 const ADDTODOS = "todos/ADDTODOS"; // 섹션 todo 추가
 const REMOVETODOS = "todos/REMOVETODOS"; //섹션 todo 삭제
@@ -24,6 +23,11 @@ export const Insert = (todo, list) => ({
     type: INSERT,
     todo,
     list
+});
+export const Remove = (todo,item) => ({
+    type: REMOVE,
+    todo,
+    item
 });
 
 function todos(state = initialState, action) {
@@ -57,11 +61,11 @@ function todos(state = initialState, action) {
                     if(el.todoIndex === action.todo.todoIndex){
                        return {
                             ...el,
-                            items : el.items.concat({
+                            items : el.items ? el.items.concat({
                                 ...action.list,
                                 id : state.itemidx,
                                 done : false
-                            })
+                            }) : []
                        }
                     }else{
                         return el;
@@ -70,88 +74,26 @@ function todos(state = initialState, action) {
             }
 
         case CHANGE_INPUT:
-            console.log(action.types)
-        case TOGGLE:
-            console.log(action.types)
+            console.log(action.type)
         case REMOVE:
-            console.log(action.types)
+            return {
+                ...state,
+                todos : state.todos.map((el)=>{
+                    if(el.todoIndex === action.todo.todoIndex){
+                        return {
+                            ...el,
+                            items : el.items.filter((el)=>{
+                                return el.id !== action.item.id
+                            })
+                        }
+                    }else{
+                        return el;
+                    }
+                })
+            }
         default:
             return state;
     }
 }
 
 export default todos;
-
-
-/* 
-export const changeInput = input => ({
-    type : CHANGE_INPUT,
-    input,
-})
-
-let id = 3; //inser가 호출될 때마다 1씩 더해주기
-export const insert = text => ({
-    type : INSERT,
-    todo : {
-        id : id++,
-        text,
-        done : false
-    }
-});
-
-export const toggle = id => ({
-    type : TOGGLE,
-    id
-});
-
-export const remove = id => ({
-    type : REMOVE,
-    id
-})
-
-const initialState  = {
-    input : '',
-    todos : [
-        {
-            id : 1,
-            text : '리덕스 기초 배우기',
-            done : true
-        },
-        {
-            id : 2,
-            text : '리액트와 리덕스 사용하기',
-            done : false
-        },
-    ]
-};
-
-function todos (state = initialState, action){
-    switch (action.type) {
-        case CHANGE_INPUT:
-            return {
-                ...state,
-                input : action.input
-            };
-        case INSERT : 
-            return {
-                ...state,
-                todos : state.todos.concat(action.todo)
-            };
-        case TOGGLE : 
-            return {
-                ...state,
-                todos : state.todos.map(todo => 
-                    todo.id === action.id ? {...todo, done : !todo.done} : todo    
-                )
-            };
-        case REMOVE : 
-            return {
-                ...state,
-                todos : state.todos.filter(todo => todo.id !== action.id)
-            };
-        default:
-            return state;
-    }
-}
-
-export default todos; */
