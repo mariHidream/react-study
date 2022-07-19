@@ -1,9 +1,9 @@
 const CHANGE_INPUT = 'todos/CHANGE_INPUT'; // 인풋 값을 변경함
-const INSERT = 'todos/INSERT'; // 새로운 todo를 등록함
-const TOGGLE = 'todos/TOGGLE'; // todo를 체크/체크 해제함
-const REMOVE = 'todos/REMOVE'; // todo를 제거함'
-const ADDTODOS = "todos/ADDTODOS"; //리스트 섹션 추가
-const REMOVETODOS = "todos/REMOVETODOS"; //리스트 섹션 추가
+const INSERT = 'todos/INSERT'; // 새로운 item 등록
+const TOGGLE = 'todos/TOGGLE'; // 체크/체크 해제
+const REMOVE = 'todos/REMOVE'; // item 제거
+const ADDTODOS = "todos/ADDTODOS"; // 섹션 todo 추가
+const REMOVETODOS = "todos/REMOVETODOS"; //섹션 todo 삭제
 
 const initialState = {
     todoidx : 0,
@@ -20,6 +20,12 @@ export const RemoveTodos = (todoIndex) => ({
     todoIndex
 });
 
+export const Insert = (todo, list) => ({
+    type: INSERT,
+    todo,
+    list
+});
+
 function todos(state = initialState, action) {
     switch (action.type) {
         case ADDTODOS:
@@ -31,7 +37,7 @@ function todos(state = initialState, action) {
                     name : 'To-do',
                     items : [{
                         id : state.itemidx,
-                        text : 'text',
+                        text : `테스트_${state.itemidx}`,
                         done : false
                     }]
                 }])
@@ -43,9 +49,27 @@ function todos(state = initialState, action) {
                     return todo.todoIndex !== action.todoIndex
                 })
             }
-        case CHANGE_INPUT:
-            console.log(action.types)
         case INSERT:
+            state.itemidx ++;
+            return {
+                ...state,
+                todos : state.todos.map((el)=>{
+                    if(el.todoIndex === action.todo.todoIndex){
+                       return {
+                            ...el,
+                            items : el.items.concat({
+                                ...action.list,
+                                id : state.itemidx,
+                                done : false
+                            })
+                       }
+                    }else{
+                        return el;
+                    }
+                })
+            }
+
+        case CHANGE_INPUT:
             console.log(action.types)
         case TOGGLE:
             console.log(action.types)
