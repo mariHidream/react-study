@@ -28,6 +28,7 @@ const TodoItem = ({todo, RemoveTodos, Insert, Remove}) => {
         }
         Insert(todo, list);
         setText('')
+        setItemText('')
         ref.current.focus()
     }
     
